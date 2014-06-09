@@ -14,7 +14,8 @@ string MSBUILD_EXE = @"C:\Windows\Microsoft.NET\Framework\v4.0.30319\MsBuild.exe
 Haettavat pelit määritellään ```GetHardCodedList()```-aliohjelmaan. Katso esimerkki koodista.
 
 ## TODO ##
-* Testaa
+* Selvitä miten pelin heittämä poikkeus saadaan kiinni (nyt kaatuvaa peliä ei tunnisteta oikein).
+* Toteuta toiminto, jolla pelit voi julkaista kurssin wikiin.
 
 ## Kuvia ##
 
