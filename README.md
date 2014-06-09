@@ -6,10 +6,18 @@ Tämä Jypeli-kirjastoa käyttävä ohjelma lataa pelit versionhallinnasta (snv.
 
 Tarkistustehtävä määritellään suoraan lähdekoodiin. Ulkoisten ohjelmien polut ja tarkastustehtävä on kovakoodattu TarkistaOppilaidenPelit.cs -tiedostoon:
 
-  string SVN_CLI_EXE = @"C:\Temp\svn-win32-1.8.8\bin\svn.exe";
-  string MSBUILD_EXE = @"C:\Windows\Microsoft.NET\Framework\v4.0.30319\MsBuild.exe";
+```
+string SVN_CLI_EXE = @"C:\Temp\svn-win32-1.8.8\bin\svn.exe";
+string MSBUILD_EXE = @"C:\Windows\Microsoft.NET\Framework\v4.0.30319\MsBuild.exe";
+```
   
-Haettavat pelit määritellään GetHardCodedList()-aliohjelmaan. Katso esimerkki koodista.
+Haettavat pelit määritellään ```GetHardCodedList()```-aliohjelmaan. Katso esimerkki koodista.
 
 ## TODO ##
 * Testaa
+
+## Kuvia ##
+
+![Pelin tila on luettavissa palluran väristä](https://raw.githubusercontent.com/juherask/tarkistaOppilaidenJypelit/master/tarkista_pelit_status.jpg)
+
+![Pelin virhetiedot saa klikkaamalla palluraa](https://raw.githubusercontent.com/juherask/tarkistaOppilaidenJypelit/master/tarkista_pelit_error.jpg)
