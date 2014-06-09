@@ -53,7 +53,7 @@ public class TarkistaOppilaidenPelit : Game
     Process activeCliProcess;
     bool processing = false;
     bool paused = false;
-    bool topmost = false;
+    bool topmost = true;
 
     Mutex stateQueueMutex = new Mutex();
     Dictionary<string, List<string>> detailedMessages = new Dictionary<string, List<string>>();
@@ -92,7 +92,7 @@ public class TarkistaOppilaidenPelit : Game
 
     public override void Begin()
     {
-        SetWindowSize(1024, 768);
+        //SetWindowSize(1024, 768);
         if (topmost)
             SetWindowTopmost(topmost);
         
@@ -175,7 +175,7 @@ public class TarkistaOppilaidenPelit : Game
 
     void OnMouseClicked()
     {
-        GameObject clickTgt = GetObjectAt(Mouse.PositionOnWorld);
+        GameObject clickTgt = GetObjectAt(Mouse.PositionOnScreen);
         if (clickTgt != null && clickTgt.Tag is string)
         {
             string stag = clickTgt.Tag as string;
@@ -210,10 +210,12 @@ public class TarkistaOppilaidenPelit : Game
         int screenWt = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
         if (topmost)
         {
+            //IsFullScreen = true; // NOTE: IsFullScreen reserves graphics device and therefore cannot be used.
             User32.SetWindowPos((uint)this.Window.Handle, HWND_TOPMOST, 0, 0, screenWt, screenHt, 0);
         }
         else
         {
+            //IsFullScreen = true; // NOTE: IsFullScreen reserves graphics device and therefore cannot be used.
             User32.SetWindowPos((uint)this.Window.Handle, HWND_TOP, 0, 0, screenWt, screenHt, 0);
         }
     }
