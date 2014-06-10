@@ -11,7 +11,13 @@ string SVN_CLI_EXE = @"C:\Temp\svn-win32-1.8.8\bin\svn.exe";
 string MSBUILD_EXE = @"C:\Windows\Microsoft.NET\Framework\v4.0.30319\MsBuild.exe";
 ```
   
-Haettavat pelit määritellään ```GetHardCodedList()```-aliohjelmaan. Katso esimerkki koodista.
+Haettavat pelit määritellään ```GetHardCodedList()```-aliohjelmaan. Katso esimerkki koodista. Kenttien pitäisi olla yksiselitteisiä poislukien ```toFetch```, joka on lista haettavista kansioista ja tiedostoista SVN polun alla. Tämä johtuu siitä, että ohjelma voidaan määrittää hakemaan vain ne kansiot ja tiedostot, jotka käänntettävä peli tarvii, vaikka versionhallinnassa olisi muutakin. Pellin alla käytämme svn:ää seuraavasti:
+
+```
+> svn checkout <repo> <author_folder> --depth empty
+> cd <author_folder>/trunk
+> svn up <files/folders_you_want>
+```
 
 ## TODO ##
 * Selvitä miten pelin heittämä poikkeus saadaan kiinni (nyt kaatuvaa peliä ei tunnisteta oikein).
