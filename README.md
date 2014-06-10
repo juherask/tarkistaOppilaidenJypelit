@@ -15,8 +15,8 @@ Haettavat pelit määritellään ```GetHardCodedList()```-aliohjelmaan. Katso es
 
 ```
 > svn checkout <repo> <author_folder> --depth empty
-> cd <author_folder>/trunk
-> svn up <files/folders_you_want>
+> cd <author_folder>
+> svn up <files_and_folders_you_want>
 ```
 
 ## TODO ##
